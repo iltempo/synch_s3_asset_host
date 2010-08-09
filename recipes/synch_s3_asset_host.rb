@@ -121,7 +121,7 @@ require 'yaml'
 #    AWS_SECRET_ACCESS_KEY: 'your secret key here'
 #    asset_host_name: "assets%d.example.com"     
 #    # dry_run: false # Set to true if you want to test the asset_host uploading without doing anything on Amazon S3
-#    # verbose: true  # Set to true to see what files are synced during deployment
+#    # verbose: false # Set to true to see what files are synced during deployment
 #
 # === The first deploy
 #
