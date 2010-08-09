@@ -121,6 +121,7 @@ require 'yaml'
 #    AWS_SECRET_ACCESS_KEY: 'your secret key here'
 #    asset_host_name: "assets%d.example.com"     
 #    # dry_run: false # Set to true if you want to test the asset_host uploading without doing anything on Amazon S3
+#    # verbose: true  # Set to true to see what files are synced during deployment
 #
 # === The first deploy
 #
@@ -184,6 +185,7 @@ namespace :s3_asset_host do
       # command += "--exclude \"\\.svn|\\.DS_Store\" --public-read "
       command += "--exclude \"\\.svn|\\.DS_Store|system\" --public-read "      
       command += "--dryrun " if fetch(:dry_run, false)
+      command += "--verbose " if fetch(:verbose, false)
       command += "#{File.join(current_release_dir, 'public')}/ #{host}:" 
       run(command)
     end   
